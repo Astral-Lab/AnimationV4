@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation V4</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Staatliches&display=swap');
+
+body {
+  font-family: 'Fugaz One', cursive;
+  background: #1f1f1f;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  
+}
+
+.slide {
+  font-size: 8rem;
+  display: flex;
+  gap: 25px;
+/*   text-shadow: 2px 2px cyan, -2px -2px magenta; */
+  animation: zoom 7s infinite;
+}
+
+.word1 {
+  animation: slide1 7s infinite;
+  position: relative;
+}
+
+.word1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: cyan;
+  animation: rise1 7s infinite;
+  text-shadow: 4px 4px magenta;
+}
+
+.word2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: cyan;
+  animation: rise1 7s infinite;
+  text-shadow: 4px 4px magenta;
+}
+
+.word2 {
+  animation: slide2 7s infinite;
+/*   text-decoration: underline; */
+}
+
+@keyframes slide1 {
+  0% {
+    transform: translateX(-100vw);
+  }
+  29% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide2 {
+  0%, 29% {
+    transform: translateX(100vw);
+  }
+  45% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rise1 {
+  0%, 45% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  74% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    
+  }
+}
+
+@keyframes zoom {
+ 
+ 75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+    </style>
+    <div class="container">
+        <div class="slide">
+          <div class="word1" data-text="IT'S">
+            IT'S
+          </div>
+          <div class="word2" data-text="FINAL">
+            FINAL
+          </div>
+        </div>
+      </div>
+</body>
+</html>
