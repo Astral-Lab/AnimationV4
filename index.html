@@ -8,110 +8,116 @@
 </head>
 <body>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
 
 body {
-  font-family: 'Fugaz One', cursive;
   background: #1f1f1f;
   color: white;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  font-family: 'Fugaz One', cursive;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  text-align: center;
-  
-}
-
-.slide {
-  font-size: 2rem;
   display: flex;
-  gap: 25px;
-/*   text-shadow: 2px 2px cyan, -2px -2px magenta; */
-  animation: zoom 7s infinite;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: respawn 3.5s infinite;
 }
 
-.word1 {
-  animation: slide1 7s infinite;
+:root {
+  --bt: 15px;
+  --blr: 25px;
+}
+
+.arrow {
+  background: #1f1f;
+  width: calc(2 * var(--blr));
+  height: var(--bt);
+  clip-path: polygon(0 0, 15% 0, 50% 70%, 85% 0, 100% 0, 50% 100%);
   position: relative;
+/*   width: 0;
+  height: 0;
+  border-top: var(--bt) solid #1f1f;
+  border-left: var(--blr) solid transparent;
+  border-right: var(--blr) solid transparent;
+  position: relative; */
 }
 
-.word1::before {
-  content: attr(data-text);
+/* .arrow::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  color: cyan;
-  animation: rise1 7s infinite;
-  text-shadow: 2px 2px magenta;
+  border-top: calc(var(--bt) * 0.7) solid #1f1f1f;
+  border-left: calc(var(--blr) * 0.7) solid transparent;
+  border-right: calc(var(--blr) * 0.7) solid transparent;
+  top: calc(-1 * var(--bt));
+  left: calc(-0.7 * var(--blr));
+} */
+
+/* .container div:first-child {
+  z-index: 999;
+  animation: push1 3.5s infinite;
+  top: 5px;
 }
 
-.word2::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: cyan;
-  animation: rise1 7s infinite;
-  text-shadow: 2px 2px magenta;
+.container div:nth-child(2) {
+  animation: push2 3.5s infinite;
 }
 
-.word2 {
-  animation: slide2 7s infinite;
-/*   text-decoration: underline; */
+.container div:last-child {
+  top: -5px;
+  z-index: -1;
+  animation: push3 3.5s infinite;
+} */
+
+.container div:first-child {
+  top: 15px;
+  animation: director 3s infinite;
 }
 
-@keyframes slide1 {
-  0% {
-    transform: translateX(-100vw);
+@keyframes director {
+  to {
+    transform: translateY(30px);
   }
-  29% {
-    transform: translateX(0);
+}
+
+@keyframes push1 {
+  29%, 100% {
+    transform: translateY(10px);
   }
 }
 
-@keyframes slide2 {
+@keyframes push2 {
   0%, 29% {
-    transform: translateX(100vw);
+    transform: translateY(0);
   }
-  45% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes rise1 {
-  0%, 45% {
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-  }
-  74% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    
+  58%, 100% {
+    transform: translateY(10px);
   }
 }
 
-@keyframes zoom {
- 
- 75% {
-    transform: scale(1);
+@keyframes push3 {
+  0%, 58% {
+    transform: translateY(0);
   }
-  100% {
-    transform: scale(0);
+  84%, 100% {
+    transform: translateY(10px);
   }
 }
     </style>
-    <div class="container">
-        <div class="slide">
-          <div class="word1" data-text="IT'S">
-            IT'S
-          </div>
-          <div class="word2" data-text="FINAL">
-            FINAL
-          </div>
-        </div>
-      </div>
+   PROJECTS
+<div class="container">
+  <div class="arrow animate"></div>
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+</div>
 </body>
 </html>
