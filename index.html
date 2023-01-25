@@ -4,120 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation V4</title>
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
-
-
-body {
-  background: #1f1f1f;
-  color: white;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Fugaz One', cursive;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: respawn 3.5s infinite;
-}
-
-:root {
-  --bt: 15px;
-  --blr: 25px;
-}
-
-.arrow {
-  background: #1f1f;
-  width: calc(2 * var(--blr));
-  height: var(--bt);
-  clip-path: polygon(0 0, 15% 0, 50% 70%, 85% 0, 100% 0, 50% 100%);
-  position: relative;
-/*   width: 0;
-  height: 0;
-  border-top: var(--bt) solid #1f1f;
-  border-left: var(--blr) solid transparent;
-  border-right: var(--blr) solid transparent;
-  position: relative; */
-}
-
-/* .arrow::before {
-  content: "";
-  position: absolute;
-  border-top: calc(var(--bt) * 0.7) solid #1f1f1f;
-  border-left: calc(var(--blr) * 0.7) solid transparent;
-  border-right: calc(var(--blr) * 0.7) solid transparent;
-  top: calc(-1 * var(--bt));
-  left: calc(-0.7 * var(--blr));
-} */
-
-/* .container div:first-child {
-  z-index: 999;
-  animation: push1 3.5s infinite;
-  top: 5px;
-}
-
-.container div:nth-child(2) {
-  animation: push2 3.5s infinite;
-}
-
-.container div:last-child {
-  top: -5px;
-  z-index: -1;
-  animation: push3 3.5s infinite;
-} */
-
-.container div:first-child {
-  top: 15px;
-  animation: director 3s infinite;
-}
-
-@keyframes director {
-  to {
-    transform: translateY(30px);
-  }
-}
-
-@keyframes push1 {
-  29%, 100% {
-    transform: translateY(10px);
-  }
-}
-
-@keyframes push2 {
-  0%, 29% {
-    transform: translateY(0);
-  }
-  58%, 100% {
-    transform: translateY(10px);
-  }
-}
-
-@keyframes push3 {
-  0%, 58% {
-    transform: translateY(0);
-  }
-  84%, 100% {
-    transform: translateY(10px);
-  }
-}
-    </style>
-   PROJECTS
-<div class="container">
-  <div class="arrow animate"></div>
-  <div class="arrow"></div>
-  <div class="arrow"></div>
-  <div class="arrow"></div>
-</div>
+    <div class="pyramid"></div>
+    <div class="container">
+        <p>THE SAGA COMES TO A DRAMATIC END</p>
+        <h1>DESTINY</h1>
+        <p>THE FINAL SHAPE</p>
+    </div>
+    <div class="mars"></div>
+    <div class="traveller"></div>
 </body>
 </html>

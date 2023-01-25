@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.10rem;
+    font-size: 1.5rem;
+}
+
+.mars {
+    width: 200vw;
+    height: 200vw;
+    background: linear-gradient(to top, black, #c1440e);
+    border-radius: 100vw;
+    position: absolute;
+    bottom: -170vw;
+    left: -50vw;
+}
+
+.traveller {
+    width: 25vmin;
+    height: 25vmin;
+    border-radius: 12.5vmin;
+    background: linear-gradient(white, black);
+    position: absolute;
+    bottom: 27vw;
+    left: calc(50vw - 12.5vmin);
+}
+
+.container {
+    padding: 2rem;
+    margin: 50% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container p:first-child {
+    font-size: 1.15rem;
+    position: relative;
+    top: 20px;
+}
+
+.container h1 {
+    font-size: 6rem;
+}
+
+.container p:last-child {
+    position: relative;
+    font-size: 2.75rem;
+    top: -20px;
+}
+
+.pyramid {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 150px solid #1f1f1f;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+}
