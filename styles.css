@@ -57,7 +57,7 @@ body {
     height: 20vh;
     position: absolute;
     bottom: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container p:first-child {
